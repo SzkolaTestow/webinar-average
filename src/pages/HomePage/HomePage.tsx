@@ -54,7 +54,7 @@ const HomePage = (props: Props) => {
           )}
         </nav>
       </div>
-      <div className="flex justify-center w-full min-h-full overflow-auto flex-wrap">
+      <div className="flex justify-center w-full min-h-full overflow-auto flex-wrap pt-10">
         <Outlet />
       </div>
     </>
