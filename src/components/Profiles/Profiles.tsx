@@ -3,7 +3,7 @@ import React from "react";
 import { getUsersWithClassesAndMarks } from "../../mockData/getData";
 import { useLoaderData } from "react-router-dom";
 import { UserWithClassesWithMarks } from "../../types";
-import { Container } from "../Container";
+import { Container, SmallContainer } from "../Container";
 import { StudentAvatar } from "../StudentAvatar";
 import { UserName } from "../UserName";
 import { ElementsList } from "../ElementsList/ElementsList";
@@ -23,11 +23,11 @@ export const Profiles = (props: Props) => {
   if (!users) return <div>Loading...</div>;
 
   return (
-    <div className="flex flex-wrap justify-between">
+    <div className="flex flex-row flex-wrap justify-center ">
       {users.map((user) => {
         return (
-          <div className="w-6/12 p-2">
-            <Container>
+          <div className="p-2">
+            <SmallContainer>
               <div>
                 <StudentAvatar avatar={user.avatar} />
               </div>
@@ -49,7 +49,7 @@ export const Profiles = (props: Props) => {
                   <ButtonViewDetail href={`profile/${user.uuid}`} />
                 </div>
               </div>
-            </Container>
+            </SmallContainer>
           </div>
         );
       })}

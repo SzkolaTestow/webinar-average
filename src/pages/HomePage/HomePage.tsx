@@ -15,7 +15,12 @@ const HomePage = (props: Props) => {
 
   return (
     <>
-      <div id="sidebar">
+      <div
+        id="sidebar"
+        className={
+          "lg:flex flex-col w-3/12 bg-gray-50 border-r-1 border-solid border-g hidden"
+        }
+      >
         <h1>School App</h1>
         <nav>
           {users.length ? (
@@ -49,7 +54,7 @@ const HomePage = (props: Props) => {
           )}
         </nav>
       </div>
-      <div className="flex justify-center p-3 w-full min-h-full overflow-auto">
+      <div className="flex justify-center w-full min-h-full overflow-auto flex-wrap">
         <Outlet />
       </div>
     </>
