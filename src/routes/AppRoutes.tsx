@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage, { homePageLoader } from "../pages/HomePage/HomePage";
 import ProfilePage, { profileLoader } from "../pages/ProfilePage/ProfilePage";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
-import { Profiles, profilesLoader } from "../components/Profiles/Profiles";
+import { ProfileList, profilesLoader } from "../components/ProfileList";
 
 type Props = {};
 const AppRoutes = (props: Props) => {
@@ -15,7 +15,7 @@ const AppRoutes = (props: Props) => {
       errorElement: <ErrorPage />,
       loader: homePageLoader,
       children: [
-        { path: "/", element: <Profiles />, loader: profilesLoader },
+        { path: "/", element: <ProfileList />, loader: profilesLoader },
         {
           path: "profile/:userId",
           loader: profileLoader,

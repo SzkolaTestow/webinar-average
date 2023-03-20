@@ -2,19 +2,14 @@
 import React from "react";
 import { Form, useLoaderData } from "react-router-dom";
 import { getUser, getUserWithClassesAndMarks } from "../../mockData/getData";
-import {
-  Class,
-  ClassWithMarks,
-  Mark,
-  UserWithClassesWithMarks,
-} from "../../types";
+import { ClassWithMarks, UserWithClassesWithMarks } from "../../types";
 import { ElementsList } from "../../components/ElementsList/ElementsList";
 import { Container } from "../../components/Container";
 import { StudentAvatar } from "../../components/StudentAvatar";
 import { UserName } from "../../components/UserName";
 import { averageGrade } from "../../utils/averageGrade";
 import { Element } from "../../components/ElementsList/Element";
-import { ButtonBack } from "../../components/ButtonBack";
+import { NavigateButton } from "../../components/NavigateButton";
 
 type Props = {};
 
@@ -42,14 +37,14 @@ const ProfilePage = (props: Props) => {
   return (
     <div className="relative">
       <div className={"absolute left-4 top-4"}>
-        <ButtonBack href="/" />
+        <NavigateButton back href="/" />
       </div>
       <Container>
         <div>
           <StudentAvatar avatar={user.avatar} />
         </div>
         <div>
-          <UserName user={user} />
+          <UserName firstName={user.firstName} lastName={user.lastName} />
           <ElementsList elements={getUserClasses()} />
         </div>
       </Container>

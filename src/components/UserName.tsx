@@ -3,14 +3,15 @@ import React from "react";
 import { User } from "../types";
 
 type Props = {
-  user: User;
+  firstName: string;
+  lastName: string;
 };
-export const UserName = ({ user }: Props) => {
+export const UserName = ({ firstName, lastName }: Props) => {
   return (
     <h1 className="text-xl">
-      {user.firstName || user.lastName ? (
+      {firstName || lastName ? (
         <>
-          {user.firstName} {user.lastName}
+          {firstName} {lastName}
         </>
       ) : (
         <i>No Name</i>
