@@ -19,13 +19,13 @@ describe("averageGrade", () => {
     );
   });
 
-  test("throws an error when there is at least one negative grade in an array with positive grades", () => {
-    expect(() => averageGrade([2, 4, -6, 8])).toThrow(
-      "Negative grades are not allowed"
+  test("throws an error when there are grade above 6", () => {
+    expect(() => averageGrade([2, 3, 5, 8])).toThrow(
+      "Grades above 6 are not allowed"
     );
   });
 
   test("does not throw an error when there are no negative grades", () => {
-    expect(() => averageGrade([2, 4, 6, 8])).not.toThrow();
+    expect(() => averageGrade([2, 4, 6, 1])).not.toThrow();
   });
 });

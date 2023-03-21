@@ -1,7 +1,5 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
-import { MemoryRouter } from "react-router-dom";
 import { Profile } from "./Profile";
 import { SubjectCode } from "../../types";
 
@@ -28,11 +26,7 @@ const props = {
 
 describe("Profiles", () => {
   it("should display name and avatar", () => {
-    render(
-      <MemoryRouter>
-        <Profile {...props} />
-      </MemoryRouter>
-    );
+    render(<Profile {...props} />);
 
     expect(screen.getByText("John Snow")).toBeVisible();
     expect(screen.getByRole("img").getAttribute("src")).toBe(
@@ -41,11 +35,7 @@ describe("Profiles", () => {
   });
 
   it("should display an average grade", () => {
-    render(
-      <MemoryRouter>
-        <Profile {...props} />
-      </MemoryRouter>
-    );
+    render(<Profile {...props} />);
 
     expect(screen.getByText("4.5")).toBeVisible();
   });

@@ -44,9 +44,6 @@ export const Profile = ({
               />
             }
           />
-          <div className={"flex justify-end align-bottom"}>
-            <NavigateButton href={`profile/${uuid}`} />
-          </div>
         </div>
       </SmallContainer>
     </div>

@@ -36,9 +36,6 @@ const ProfilePage = (props: Props) => {
 
   return (
     <div className="relative">
-      <div className={"absolute left-4 top-4"}>
-        <NavigateButton back href="/" />
-      </div>
       <Container>
         <div>
           <StudentAvatar avatar={user.avatar} />
